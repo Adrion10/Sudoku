@@ -45,3 +45,6 @@ hr {
   justify-content: center;
   align-items: center;
 }
+.number-selected {
+  background-color: rgb(181, 22, 22);
+}

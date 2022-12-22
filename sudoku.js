@@ -33,6 +33,7 @@ function setGame() {
     let number = document.createElement("div");
     number.id = i;
     number.innerText = i;
+    number.addEventListener("click", selectNumber);
     number.classList.add("number");
     document.getElementById("digits").appendChild(number);
   }
@@ -44,4 +45,11 @@ function setGame() {
       document.getElementById("board").append(tile);
     }
   }
+}
+function selectNumber() {
+  if (numSelected != null) {
+    numSelected.classList.remove("number-selected");
+  }
+  numSelected = this;
+  numSelected.classList.add("number-selected");
 }
