@@ -36,4 +36,12 @@ function setGame() {
     number.classList.add("number");
     document.getElementById("digits").appendChild(number);
   }
+  for (let j = 0; j < 9; j++) {
+    for (let b = 0; b < 9; b++) {
+      let tile = document.createElement("div");
+      tile.id = j.toString() + "-" + b.toString();
+      tile.classList.add("tile");
+      document.getElementById("board").append(tile);
+    }
+  }
 }
