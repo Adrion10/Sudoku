@@ -1,7 +1,7 @@
-let numSelected = null;
-let tileSelected = null;
+var numSelected = null;
+var tileSelected = null;
 
-let errors = 0;
+var errors = 0;
 
 var board = [
   "--74916-5",
@@ -14,7 +14,7 @@ var board = [
   "67-83----",
   "81--45---",
 ];
-let solution = [
+var solution = [
   "387491625",
   "241568379",
   "569327418",
@@ -69,9 +69,16 @@ function selectTile() {
     if (this.innerText != "") {
       return;
     }
-    this.innerText = numSelected.id;
-    let coords = this.id.split(".");
+
+    let coords = this.id.split("-");
     let j = parseInt(coords[0]);
     let b = parseInt(coords[1]);
+
+    if (solution[j][b] == numSelected.id) {
+      this.innerText = numSelected.id;
+    } else {
+      errors += 1;
+      document.getElementById("errors").innerText = errors;
+    }
   }
 }
