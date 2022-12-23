@@ -43,6 +43,7 @@ function setGame() {
       tile.id = j.toString() + "-" + b.toString();
       if (board[j][b] != "-") {
         tile.innerText = board[j][b];
+        tile.classList.add("tile-start");
       }
       tile.addEventListener("click", selectTile);
       tile.classList.add("tile");

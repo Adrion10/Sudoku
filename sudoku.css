@@ -29,7 +29,7 @@ hr {
 #digits {
   width: 450px;
   height: 50px;
-  background-color: grey;
+  background-color: rgb(227, 231, 230);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -46,5 +46,8 @@ hr {
   align-items: center;
 }
 .number-selected {
-  background-color: rgb(181, 22, 22);
+  background-color: rgb(134, 214, 65);
+}
+.tile-start {
+  background-color: whitesmoke;
 }
