@@ -70,5 +70,8 @@ function selectTile() {
       return;
     }
     this.innerText = numSelected.id;
+    let coords = this.id.split(".");
+    let j = parseInt(coords[0]);
+    let b = parseInt(coords[1]);
   }
 }
