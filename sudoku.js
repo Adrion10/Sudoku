@@ -45,6 +45,12 @@ function setGame() {
         tile.innerText = board[j][b];
         tile.classList.add("tile-start");
       }
+      if (j == 2 || j == 5) {
+        tile.classList.add("horizontal-line");
+      }
+      if (b == 2 || b == 5) {
+        tile.classList.add("vertical-line");
+      }
       tile.addEventListener("click", selectTile);
       tile.classList.add("tile");
       document.getElementById("board").append(tile);
