@@ -125,7 +125,20 @@ function sartGame() {
 
 function generateBoard(board) {
   // clear previous board
+  clearPrevious();
 }
+
+function clearPrevious() {
+  // Accses all of the tiles
+  let tiles = qsa(".tile");
+}
+// helepe functions
 function id(id) {
   return document.getElementById(id);
+}
+function qs(selector) {
+  return document.querySelector(selector);
+}
+function qsa(selector) {
+  return document.querySelectorAll(selector);
 }
