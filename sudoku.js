@@ -109,7 +109,13 @@ window.onload = function () {
   //Run start game function when button is clicked
   id("start-btn").addEventListner("click", startGame);
 };
-function sartGame() {}
+function sartGame() {
+  //Chose board dificulty
+  let board;
+  if (id("diff-1").checked) board = easy[0];
+  else if (id("diff-2").checked) board = medium[0];
+  else board = hard[0];
+}
 function id(id) {
   return document.getElementById(id);
 }
