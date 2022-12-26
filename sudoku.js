@@ -105,4 +105,11 @@ var selectNum;
 var selectTiles;
 var disableSelect;
 
-window.onload = function () {};
+window.onload = function () {
+  //Run start game function when button is clicked
+  id("start-btn").addEventListner("click", startGame);
+};
+function sartGame() {}
+function id(id) {
+  return document.getElementById(id);
+}
