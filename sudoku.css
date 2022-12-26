@@ -83,6 +83,9 @@ h1 {
   margin-bottom: 10px;
   padding-left: 50px;
   padding-right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 button {
   justify-self: center;

@@ -119,6 +119,12 @@ function sartGame() {
   lives = 3;
   disableSelect = false;
   id("lives").textContent = "Lives Remaining 3";
+  // Create boaard based on difficulty
+  generateBoard(board);
+}
+
+function generateBoard(board) {
+  // clear previous board
 }
 function id(id) {
   return document.getElementById(id);
