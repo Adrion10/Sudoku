@@ -115,6 +115,10 @@ function sartGame() {
   if (id("diff-1").checked) board = easy[0];
   else if (id("diff-2").checked) board = medium[0];
   else board = hard[0];
+  // Set lives to 3 and enable selecting numbers and tiles
+  lives = 3;
+  disableSelect = false;
+  id("lives").textContent = "Lives Remaining 3";
 }
 function id(id) {
   return document.getElementById(id);
