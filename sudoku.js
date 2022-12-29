@@ -131,6 +131,13 @@ function generateBoard(board) {
 function clearPrevious() {
   // Accses all of the tiles
   let tiles = qsa(".tile");
+  // remove each of the tiles
+  for (let i = 0; i < tiles.length; i++) {
+    tiles[i.remove];
+  }
+  // if there is a timer clear it
+  if (timer) clearTimeout(timer);
+  // deselect any numbers
 }
 // helepe functions
 function id(id) {
