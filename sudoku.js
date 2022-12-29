@@ -101,8 +101,8 @@ const hard = [
 var timer;
 var timeRemaining;
 var lives;
-var selectNum;
-var selectTiles;
+var selectedNum;
+var selectedTile;
 var disableSelect;
 
 window.onload = function () {
@@ -126,6 +126,10 @@ function sartGame() {
 function generateBoard(board) {
   // clear previous board
   clearPrevious();
+  // let used to incremente tile ids
+  let idCount = 0
+  // create 81 tiles
+  for ( let i = 0; )
 }
 
 function clearPrevious() {
@@ -138,6 +142,12 @@ function clearPrevious() {
   // if there is a timer clear it
   if (timer) clearTimeout(timer);
   // deselect any numbers
+  for (let i = 0; i < id("number-container").children.length; i++) {
+    id("number-container").children[i].classList.remove("selected");
+  }
+  //Clear selected variables
+  selectedTile = null;
+  selectedNum = null;
 }
 // helepe functions
 function id(id) {
