@@ -127,9 +127,29 @@ function generateBoard(board) {
   // clear previous board
   clearPrevious();
   // let used to incremente tile ids
-  let idCount = 0
+  let idCount = 0;
   // create 81 tiles
-  for ( let i = 0; )
+  for (let i = 0; i < 81; i++) {
+    let tile = document.createElement("p");
+    // if the tile is not to be black
+    if (board.charAt(i) != "-") {
+      // Set tile text to correct number
+      tile.textContent = board.charAt(i);
+    } else {
+      // Add click event listner to tile
+    }
+    // Assign tile id
+    tile.id = idCount;
+    // Increment for next tile
+    idCount++;
+    // Add tile class to all tiles
+    tile.classList.add("tile");
+    if ((tile.id > 17 && tile.id < 27) || (tile.id > 44 && tile.id < 54)) {
+      tile.classList.add("bottemBorder");
+    }
+    if((tile.id+1)%9 ==3 || (tile.id + 1)%9 == 6){
+      tile.classList.add("rightBorder")
+  }
 }
 
 function clearPrevious() {
