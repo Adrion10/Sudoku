@@ -142,8 +142,14 @@ function startTimer() {
   //sets timer to update every second
   timer = setInterval(function () {
     timeRemaining--;
-  });
+    //If no time remaining end the game
+    if (timeRemaining === 0) endGame();
+    id("timer").textContent = timeConversion(timeRemaining);
+  }, 1000);
 }
+
+function timeConversion(time) {
+  //Converts seconds to minutes
 
 function generateBoard(board) {
   // clear previous board
