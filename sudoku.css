@@ -72,7 +72,7 @@ header {
   border-bottom: 1px solid rgb(165, 57, 57);
 }
 h1 {
-  font-size: 3rem;
+  font-size: 45pt;
   font-weight: bold;
 }
 #setup-game {
@@ -102,10 +102,10 @@ p#lives {
   justify-content: center;
 }
 #number-container > p {
-  border: 1px solid black;
+  border: 1px solid rgb(165, 23, 23);
   border-radius: 20%;
   width: 60px;
-  height: 60px;
+  height: 600px;
   font-size: 40pt;
   margin-left: 50px;
   margin-top: 5px;
@@ -119,7 +119,7 @@ p#lives {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  width: 60px;
+  width: 600px;
   height: 600px;
 }
 .tile {
@@ -131,10 +131,10 @@ p#lives {
   vertical-align: middle;
   font-size: 40pt;
 }
-p.selected {
+p .selected {
   background-color: rgb(167, 179, 246);
 }
-p.incorrect {
+p .incorrect {
   color: red;
 }
 

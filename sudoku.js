@@ -111,7 +111,7 @@ window.onload = function () {
 };
 function startGame() {
   //Chose board dificulty
-  console.log("start");
+
   let board;
   if (id("diff-1").checked) board = easy[0];
   else if (id("diff-2").checked) board = medium[0];
@@ -122,6 +122,14 @@ function startGame() {
   id("lives").textContent = "Lives Remaining: 3";
   // Create boaard based on difficulty
   generateBoard(board);
+  // Start the timer
+  startTimer();
+  // sets theme based on input
+  if (id("theme-1").checked) {
+    qs("body").classList.remove("dark");
+  } else {
+    qs("body").classList.add("dark");
+  }
 }
 
 function generateBoard(board) {
