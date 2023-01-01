@@ -107,10 +107,11 @@ var disableSelect;
 
 window.onload = function () {
   //Run start game function when button is clicked
-  id("start-btn").addEventListner("click", startGame);
+  id("start-btn").addEventListener("click", startGame);
 };
-function sartGame() {
+function startGame() {
   //Chose board dificulty
+  console.log("start");
   let board;
   if (id("diff-1").checked) board = easy[0];
   else if (id("diff-2").checked) board = medium[0];
@@ -118,7 +119,7 @@ function sartGame() {
   // Set lives to 3 and enable selecting numbers and tiles
   lives = 3;
   disableSelect = false;
-  id("lives").textContent = "Lives Remaining 3";
+  id("lives").textContent = "Lives Remaining: 3";
   // Create boaard based on difficulty
   generateBoard(board);
 }
@@ -144,20 +145,22 @@ function generateBoard(board) {
     idCount++;
     // Add tile class to all tiles
     tile.classList.add("tile");
-    if ((tile.id > 17 && tile.id < 27) || (tile.id > 44 && tile.id < 54)) {
-      tile.classList.add("bottemBorder");
+    if ((tile.id > 17 && tile.id < 27) || (tile.id > 44) & (tile.id < 54)) {
+      tile.classList.add("bottomBorder");
     }
-    if((tile.id+1)%9 ==3 || (tile.id + 1)%9 == 6){
-      tile.classList.add("rightBorder")
+    if ((tile.id + 1) % 9 == 3 || (tile.id + 1) % 9 == 6) {
+      tile.classList.add("rightBorder");
+    }
+    // add tile to board
+    id("board").appendChild(tile);
   }
 }
-
 function clearPrevious() {
   // Accses all of the tiles
   let tiles = qsa(".tile");
   // remove each of the tiles
   for (let i = 0; i < tiles.length; i++) {
-    tiles[i.remove];
+    tiles[i].remove();
   }
   // if there is a timer clear it
   if (timer) clearTimeout(timer);
