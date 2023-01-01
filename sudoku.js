@@ -132,7 +132,18 @@ function startGame() {
   }
 }
 
-function startTimer() {}
+function startTimer() {
+  // Sets time remaining based on input
+  if (id("time-1").checked) timeRemaining = 180;
+  else if (id("time-2").checked) timeRemaining = 300;
+  else timeRemaining = 600;
+  // set timer for first second
+  id("timer").textContent = timeConversion(timeRemaining);
+  //sets timer to update every second
+  timer = setInterval(function () {
+    timeRemaining--;
+  });
+}
 
 function generateBoard(board) {
   // clear previous board
