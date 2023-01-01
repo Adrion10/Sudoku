@@ -132,6 +132,8 @@ function startGame() {
   }
 }
 
+function startTimer() {}
+
 function generateBoard(board) {
   // clear previous board
   clearPrevious();
