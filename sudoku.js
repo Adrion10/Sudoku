@@ -108,6 +108,30 @@ var disableSelect;
 window.onload = function () {
   //Run start game function when button is clicked
   id("start-btn").addEventListener("click", startGame);
+  // Add event lisener to each number in number container{
+    id("number-container").children[i].addEventListener("click", function () {
+      // if selecting is not disabled
+      if(!disableSelect){
+// if number is alreasy sselected
+if( this.classList.contains("selected")){
+  // Then remove selection
+  this.classList.remove("selected")
+  selectedNum = null
+}else{
+  // Deleselect all other numebr
+  for ( let i = 0 ; i <9 ; i++){
+    id("number-container").children[i].classList.remove("selected");
+  }
+  // Select it and update selectNum Variable
+  this.classList.add("selected")
+  selectedNum = this
+  updateMove()
+
+}
+      }
+    })
+  }
+  for ( let i = 0 ; i< id("number-container").children.length; i++)
 };
 function startGame() {
   //Chose board dificulty
