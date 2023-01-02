@@ -130,6 +130,8 @@ function startGame() {
   } else {
     qs("body").classList.add("dark");
   }
+  // Show number container
+  id("number-container").classList.remove("hidden");
 }
 
 function startTimer() {
@@ -153,6 +155,7 @@ function timeConversion(time) {
   if (minutes < 10) minutes = "0" + minutes;
   let seconds = time % 60;
   if (seconds < 10) seconds = "0" + seconds;
+  return minutes + ":" + seconds;
 }
 
 function generateBoard(board) {
