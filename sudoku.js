@@ -281,7 +281,7 @@ function updateMove() {
     }
   }
 }
-function checkDOne() {
+function checkDone() {
   let tiles = qsa(".tile");
   for (let i = 0; i < tiles.length; i++) {
     if (tiles[i].textContent === "") return false;
