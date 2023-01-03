@@ -238,6 +238,37 @@ function updateMove() {
     selectedTile.textContent = selectedNum.textContent;
     // if the number matches the corresponding nuber  in the solution key
     if (checkCorrect(selectedTile)) {
+      // deselect the tiles
+      selectedTile.classList.remove("selected");
+      selectedNum.classList.remove("selected");
+      //Clear the selected variables
+      selectedTile = null;
+      selectedNum = null;
+      // If the number does not match the solution key
+    } else {
+      //Desable selecting new number for one second
+      disableSelect = true;
+      // Make the numer turn red
+      selectedTile.classList.add("incorrect");
+      // Run in one second
+      setTimeout(function () {
+        // substract lives by one
+        lives--;
+        // if no lives left end the game
+        if (lives === 0) {
+          endGame();
+        } else {
+          // if lives is not equal to zero
+          // Update lives text
+          id("lives").textContent = "Lives Remaining:" + lives;
+          // Renable selected numbers and tiles
+          disableSelect = false;
+        }
+        // restore tile color and remove selected from both
+        selectedTile.classList.remove("incorrect");
+        selectedTile.classList.remove("selected");
+        selectedNum.classList.remove("selected");
+      }, 1000);
     }
   }
 }
