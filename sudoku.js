@@ -241,6 +241,16 @@ function updateMove() {
     }
   }
 }
+function checkCorrect(tile) {
+  //Set solurion based on dificulty selection
+  let solution;
+  if (id("diff-1").checked) solution = easy[1];
+  else if (id("diff-2").checked) solution = medium[1];
+  else solution = hard[1];
+  // if tiles number is equal to solution's number
+  if (solution.charAt(tile.id) === tile.textContent) return true;
+  else return false;
+}
 
 function clearPrevious() {
   // Accses all of the tiles
