@@ -244,6 +244,11 @@ function updateMove() {
       //Clear the selected variables
       selectedTile = null;
       selectedNum = null;
+      // Check if board is completed
+      if (checkDone(selectedTile)) {
+        endGame();
+      }
+
       // If the number does not match the solution key
     } else {
       //Desable selecting new number for one second
