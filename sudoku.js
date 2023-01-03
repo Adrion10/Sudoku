@@ -231,6 +231,17 @@ function generateBoard(board) {
     id("board").appendChild(tile);
   }
 }
+function updateMove() {
+  // If a tile and a number is selcted
+  if (selectedTile && selectedNum) {
+    //Set the tile to the correct numeber
+    selectedTile.textContent = selectedNum.textContent;
+    // if the number matches the corresponding nuber  in the solution key
+    if (checkCorrect(selectedTile)) {
+    }
+  }
+}
+
 function clearPrevious() {
   // Accses all of the tiles
   let tiles = qsa(".tile");
