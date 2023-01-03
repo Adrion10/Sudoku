@@ -268,8 +268,23 @@ function updateMove() {
         selectedTile.classList.remove("incorrect");
         selectedTile.classList.remove("selected");
         selectedNum.classList.remove("selected");
+        // Clear tiles the tiles text and clear selected variables
+        selectedTile.textContect = "";
+        selectedTile = null;
+        selectedNum = null;
       }, 1000);
     }
+  }
+}
+function endGame() {
+  //disable moves and stop the timer
+  disableSelect = true;
+  clearTimeout(timer);
+  //display win or loss mesagge
+  if (lives === 0 || timeRemaining === 0) {
+    id("lives").textContent = "You lost!";
+  } else {
+    id("lives").textContent = "You Won!";
   }
 }
 function checkCorrect(tile) {
