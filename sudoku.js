@@ -281,6 +281,13 @@ function updateMove() {
     }
   }
 }
+function checkDOne() {
+  let tiles = qsa(".tile");
+  for (let i = 0; i < tiles.length; i++) {
+    if (tiles[i].textContent === "") return false;
+  }
+  return true;
+}
 function endGame() {
   //disable moves and stop the timer
   disableSelect = true;
