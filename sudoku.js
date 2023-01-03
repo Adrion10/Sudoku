@@ -108,34 +108,32 @@ var disableSelect;
 window.onload = function () {
   //Run start game function when button is clicked
   id("start-btn").addEventListener("click", startGame);
-  // Add event lisener to each number in number container{
+  // Add event lisener to each number in number container
+  for (let i = 0; i < id("number-container").children.length; i++) {
     id("number-container").children[i].addEventListener("click", function () {
       // if selecting is not disabled
-      if(!disableSelect){
-// if number is alreasy sselected
-if( this.classList.contains("selected")){
-  // Then remove selection
-  this.classList.remove("selected")
-  selectedNum = null
-}else{
-  // Deleselect all other numebr
-  for ( let i = 0 ; i <9 ; i++){
-    id("number-container").children[i].classList.remove("selected");
-  }
-  // Select it and update selectNum Variable
-  this.classList.add("selected")
-  selectedNum = this
-  updateMove()
-
-}
+      if (!disableSelect) {
+        // if number is alreasy sselected
+        if (this.classList.contains("selected")) {
+          // Then remove selection
+          this.classList.remove("selected");
+          selectedNum = null;
+        } else {
+          // Deleselect all other numebr
+          for (let i = 0; i < 9; i++) {
+            id("number-container").children[i].classList.remove("selected");
+          }
+          // Select it and update selectNum Variable
+          this.classList.add("selected");
+          selectedNum = this;
+          updateMove();
+        }
       }
-    })
+    });
   }
-  for ( let i = 0 ; i< id("number-container").children.length; i++)
 };
 function startGame() {
   //Chose board dificulty
-
   let board;
   if (id("diff-1").checked) board = easy[0];
   else if (id("diff-2").checked) board = medium[0];
@@ -196,6 +194,26 @@ function generateBoard(board) {
       tile.textContent = board.charAt(i);
     } else {
       // Add click event listner to tile
+      tile.addEventListener("click", function () {
+        // if selecting is not disabled
+        if (!disableSelect) {
+          // if the tile is selected
+          if (tile.classList.contains("selected")) {
+            // Then remove selected
+            tile.classList.remove("selected");
+            selectedTile = null;
+          } else {
+            // Deselect all other tiles
+            for (let i = 0; i < 81; i++) {
+              qsa(".tile")[i].classList.remove("selected");
+            }
+            // Add selection and update variable
+            tile.classList.add("selected");
+            selectedTile = tile;
+            updateMove();
+          }
+        }
+      });
     }
     // Assign tile id
     tile.id = idCount;
