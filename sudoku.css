@@ -131,10 +131,10 @@ p#lives {
   vertical-align: middle;
   font-size: 40pt;
 }
-p .selected {
-  background-color: rgb(167, 179, 246);
+.selected {
+  background-color: rgb(124, 136, 207);
 }
-p .incorrect {
+.incorrect {
   color: red;
 }
 
